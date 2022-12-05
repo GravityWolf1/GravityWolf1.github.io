@@ -53,6 +53,7 @@ function startGame() {
         playerAce += checkAce(card);
         document.getElementById("player-cards").append(cardImg);
     }
+    document.getElementById("player-sum").innerText = playerSum;
 
     document.getElementById("hit").addEventListener("click", hit);
     document.getElementById("stand").addEventListener("click", stand);
@@ -75,6 +76,10 @@ function hit() {
     if (reduceAce(playerSum, playerAce) > 21) {
         canHit = false;
     }
+    document.getElementById("player-sum").innerText = playerSum;
+
+        console.log(dealerSum);
+        console.log(playerSum);
 }
 
 function stand() {
@@ -117,6 +122,10 @@ function stand() {
     document.getElementById("dealer-sum").innerText = dealerSum;
     document.getElementById("player-sum").innerText = playerSum;
     document.getElementById("results").innerText = message;
+
+        console.log(dealerSum);
+        console.log(playerSum);
+        console.log(message);
 }
 
 function getValue(card) {
